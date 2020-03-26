@@ -1,5 +1,8 @@
 package com.bibliotheque.motosapi;
 
+import com.bibliotheque.motosapi.models.Categorie;
+import com.bibliotheque.motosapi.services.CategorieService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

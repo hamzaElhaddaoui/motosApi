@@ -2,6 +2,7 @@ package com.bibliotheque.motosapi.services;
 
 import com.bibliotheque.motosapi.models.Categorie;
 import com.bibliotheque.motosapi.repositories.CategorieRepository;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+@NoArgsConstructor
 @Service
 public class CategorieService{
 
