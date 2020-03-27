@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @NoArgsConstructor
 @Service
@@ -23,7 +22,7 @@ public class CategorieService{
         return categories;
     }
 
-    public Categorie getCategorie(String id){
+    public Categorie getCategorie(Long id){
         var optCategorie = categorieRepository.findById(id);
         if(optCategorie.isPresent()){
             return optCategorie.get();
@@ -35,14 +34,14 @@ public class CategorieService{
         categorieRepository.save(categorie);
     }
 
-    public void updateCategorie(String id,Categorie categorie){
+    public void updateCategorie(Long id,Categorie categorie){
         if(this.getCategorie(id)!=null){
             categorie.setId(id);
             categorieRepository.save(categorie);
         }
     }
 
-    public void deleteCategorie(String id){
+    public void deleteCategorie(Long id){
         this.categorieRepository.deleteById(id);
     }
 

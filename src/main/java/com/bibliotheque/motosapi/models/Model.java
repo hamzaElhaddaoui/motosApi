@@ -15,7 +15,7 @@ import java.sql.Date;
 @Entity
 public class Model {
     @Id
-    String id;
+    Long id;
     String nom;
     String description;
     Date dateDeNaissance;

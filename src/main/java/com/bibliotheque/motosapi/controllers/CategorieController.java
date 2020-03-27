@@ -19,7 +19,7 @@ public class CategorieController {
     }
 
     @GetMapping("/categories/{id}")
-    public Categorie getCategorie(@PathVariable String id){
+    public Categorie getCategorie(@PathVariable Long id){
         return categorieService.getCategorie(id);
     }
 
@@ -29,12 +29,12 @@ public class CategorieController {
     }
 
     @PutMapping("/categories/{id}")
-    public void updateCategorie(@PathVariable String id, @RequestBody Categorie categorie){
+    public void updateCategorie(@PathVariable Long id, @RequestBody Categorie categorie){
         this.categorieService.updateCategorie(id,categorie);
     }
 
     @DeleteMapping("/categories/{id}")
-    public void deleteCategorie(@PathVariable String id){
+    public void deleteCategorie(@PathVariable Long id){
         this.categorieService.deleteCategorie(id);
     }
 }

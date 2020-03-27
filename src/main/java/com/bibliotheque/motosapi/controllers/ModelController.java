@@ -19,12 +19,12 @@ public class ModelController {
     }
 
     @GetMapping("/categories/{id}/models")
-    public List<Model> getAllModelsByCategorie(@PathVariable String id){
+    public List<Model> getAllModelsByCategorie(@PathVariable Long id){
         return modelService.getAllModelsByCategorie(id);
     }
 
     @GetMapping("/models/{id}")
-    public Model getModel(@PathVariable String id){
+    public Model getModel(@PathVariable Long id){
         return this.modelService.getModelById(id);
     }
 
@@ -34,12 +34,12 @@ public class ModelController {
     }
 
     @PutMapping("/models/{id}")
-    public void updateModel(@RequestBody Model model,@PathVariable String id){
+    public void updateModel(@RequestBody Model model,@PathVariable Long id){
         modelService.updateModel(id,model);
     }
 
     @DeleteMapping("/models/{id}")
-    public void deleteModel(@PathVariable String id){
+    public void deleteModel(@PathVariable Long id){
         modelService.deleteModel(id);
     }
 }

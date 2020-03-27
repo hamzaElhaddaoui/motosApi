@@ -8,12 +8,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class MotosapiApplication {
-//    @Autowired
-//    private static CategorieService categorieService;
+
     public static void main(String[] args) {
         SpringApplication.run(MotosapiApplication.class, args);
-//        categorieService.addCategorie(new Categorie("1","Racer"));
-//        categorieService.addCategorie(new Categorie("2","Trail"));
     }
 
 }

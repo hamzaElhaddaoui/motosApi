@@ -3,6 +3,7 @@ package com.bibliotheque.motosapi.models;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -12,8 +13,32 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Data
 @Entity
-public class Categorie implements Serializable {
+@ToString
+public class Categorie implements Serializable,Cloneable{
     @Id
-    private String id;
+    private Long id;
     private String nom;
+
+    @Override
+    public boolean equals(Object o){
+        //self check
+        if(this == o){
+            return true;
+        }
+        //null check
+        if(o == null){
+            return false;
+        }
+        //type check and cast
+        if(getClass() != o.getClass()){
+            return false;
+        }
+        Categorie cat = (Categorie) o;
+        return this.id==cat.id && this.nom.equals(cat.nom);
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException{
+     return super.clone();
+    }
 }
