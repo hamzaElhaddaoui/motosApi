@@ -1,7 +1,7 @@
 language: java
 jdk: oraclejdk8
 script:
-  - ./mvnw clean compile
+  - mvn clean compile
 deploy:
   provider: pages
   github-token: $GITHUB_TOKEN
