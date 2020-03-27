@@ -4,6 +4,5 @@ script:
   - ./mvnw clean compile
 deploy:
   provider: pages
-  skip_cleanup: true
   github-token: $GITHUB_TOKEN
 
