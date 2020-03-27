@@ -1,8 +1,2 @@
 language: java
-jdk: oraclejdk8
-script:
-  - mvn clean compile
-deploy:
-  provider: pages
-  github-token: $GITHUB_TOKEN
 
