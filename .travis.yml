@@ -2,4 +2,6 @@ language: java
 jdk: oraclejdk11
 script:
   - mvn clean compile
+before_install:
+  - chmod +x mvnw
 
