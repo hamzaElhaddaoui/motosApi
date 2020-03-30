@@ -19,7 +19,7 @@ class MotosapiApplicationTests {
         Assertions.assertTrue(categorieService.getCategorie(categorie.getId()).equals(categorie));
         Assertions.assertFalse(categorieService.getAllCategories().get(0).equals(categorie1));
         categorieService.addCategorie(categorie1);
-        Assertions.assertTrue(categorieService.getAllCategories().get(1).equals(categorie1));
+        Assertions.assertTrue(categorieService.getCategorie(categorie1.getId()).equals(categorie1));
         try {
             Categorie categorie2 = (Categorie)categorie.clone();
             categorie2.setNom("Racer");
