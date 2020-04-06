@@ -1,9 +1,6 @@
 package com.bibliotheque.motosapi.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -14,6 +11,7 @@ import java.io.Serializable;
 @Data
 @Entity
 @ToString
+@EqualsAndHashCode
 public class Categorie implements Serializable,Cloneable{
     @Id
     private Long id;

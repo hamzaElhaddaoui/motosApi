@@ -18,10 +18,10 @@ public class ModelController {
         return modelService.getAllModels();
     }
 
-    @GetMapping("/categories/{id}/models")
-    public List<Model> getAllModelsByCategorie(@PathVariable Long id){
-        return modelService.getAllModelsByCategorie(id);
-    }
+//    @GetMapping("/categories/{id}/models")
+//    public List<Model> getAllModelsByCategorie(@PathVariable Long id){
+//        return modelService.getAllModelsByCategorie(id);
+//    }
 
     @GetMapping("/models/{id}")
     public Model getModel(@PathVariable Long id){

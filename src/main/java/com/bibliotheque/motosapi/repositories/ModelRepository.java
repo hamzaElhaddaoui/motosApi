@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface ModelRepository extends CrudRepository<Model, Long> {
-    List<Model> findByCategorieId(Long id);
+//    List<Model> findByCategorieId(Long id);
 }

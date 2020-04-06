@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import java.sql.Date;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -17,8 +16,10 @@ public class Model {
     @Id
     Long id;
     String nom;
-    String description;
-    Date dateDeNaissance;
+    String image;
+    int debutfabrication;
+    int finfabrication;
+    int generation;
     @ManyToOne
-    Categorie categorie;
+    Marque marque;
 }

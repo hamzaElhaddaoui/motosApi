@@ -20,9 +20,9 @@ public class ModelService {
         return models;
     }
 
-    public List<Model> getAllModelsByCategorie(Long id){
-        return modelRepository.findByCategorieId(id);
-    }
+//    public List<Model> getAllModelsByCategorie(Long id){
+//        return modelRepository.findByCategorieId(id);
+//    }
 
     public Model getModelById(Long id){
         var optionModel = modelRepository.findById(id);
