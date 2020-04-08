@@ -13,6 +13,11 @@ public class MotoController {
     @Autowired
     private MotoService motoService;
 
+    @GetMapping("/motos/index")
+    public List<Moto> getIndexMoto(){
+        return motoService.getIndexMoto();
+    }
+
     @GetMapping("/motos")
     public List<Moto> getAllMotos(){
         return motoService.getAllMoto();

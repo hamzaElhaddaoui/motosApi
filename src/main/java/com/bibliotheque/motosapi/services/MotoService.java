@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 @Service
 public class MotoService {
@@ -39,6 +40,17 @@ public class MotoService {
 
     public void deleteMoto(Long id){
         motoRepository.deleteById(id);
+    }
+
+    public List<Moto> getIndexMoto(){
+        int nbMax=20;
+        Random rand = new Random();
+        List<Moto> motos = new ArrayList<>();
+        List<Moto> allMotos = getAllMoto();
+        for (int i=0;i<nbMax;i++){
+            motos.add(allMotos.get(rand.nextInt(allMotos.size())));
+        }
+        return motos;
     }
 
 
