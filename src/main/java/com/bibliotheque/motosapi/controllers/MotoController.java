@@ -18,6 +18,16 @@ public class MotoController {
         return motoService.getIndexMoto();
     }
 
+    @GetMapping("/motos/recherche/{nom}")
+    public List<Moto> getMotoByNom(@PathVariable String nom){
+        return this.motoService.getMotoByName(nom);
+    }
+
+    @GetMapping("/motos/marques/{idMarque}")
+    public List<Moto> getMotosByMarque(@PathVariable Long idMarque){
+        return motoService.getMotoByMarqueId(idMarque);
+    }
+
     @GetMapping("/motos")
     public List<Moto> getAllMotos(){
         return motoService.getAllMoto();
