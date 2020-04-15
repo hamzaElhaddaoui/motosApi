@@ -15,10 +15,11 @@ steps:
     publishJUnitResults: true
     testResultsFiles: ''
     goals: 'package'
-- task: AzureWebApp@1
+- task: AzureRmWebAppDeployment@4
   inputs:
+    ConnectionType: 'AzureRM'
     azureSubscription: 'Azure pour les étudiants(45f45b6b-b593-4f8a-beb6-7102813dc629)'
     appType: 'webAppLinux'
-    appName: 'MotosApi'
-    package: '$(System.DefaultWorkingDirectory)/**/*.war'
-    runtimeStack: 'JAVA|11-java11'
+    WebAppName: 'MotosApi'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.war'
+    RuntimeStack: 'JAVA|11-java11'
