@@ -20,5 +20,5 @@ steps:
     azureSubscription: 'Azure pour les étudiants(45f45b6b-b593-4f8a-beb6-7102813dc629)'
     appType: 'webAppLinux'
     appName: 'MotosApi'
-    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    package: '$(System.DefaultWorkingDirectory)/**/*.war'
     runtimeStack: 'JAVA|11-java11'
