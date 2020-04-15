@@ -91,33 +91,6 @@
             </goals> 
           </execution> 
         </executions> 
-      </plugin>  
-      <plugin>
-        <groupId>com.microsoft.azure</groupId>
-        <artifactId>azure-webapp-maven-plugin</artifactId>
-        <version>1.8.0</version>
-        <configuration>
-          <schemaVersion>V2</schemaVersion>
-          <resourceGroup>motosapi-1586962643301-rg</resourceGroup>
-          <appName>motosapi-1586962643301</appName>
-          <pricingTier>P1v2</pricingTier>
-          <region>westeurope</region>
-          <runtime>
-            <os>linux</os>
-            <javaVersion>java11</javaVersion>
-            <webContainer>java11</webContainer>
-          </runtime>
-          <deployment>
-            <resources>
-              <resource>
-                <directory>${project.basedir}/target</directory>
-                <includes>
-                  <include>*.jar</include>
-                </includes>
-              </resource>
-            </resources>
-          </deployment>
-        </configuration>
       </plugin>
     </plugins> 
   </build> 
