@@ -21,5 +21,5 @@ steps:
     ConnectionType: 'AzureRM'
     appType: 'webAppLinux'
     WebAppName: 'MotosApi'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.war'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.jar'
     RuntimeStack: 'JAVA|11-java11'
