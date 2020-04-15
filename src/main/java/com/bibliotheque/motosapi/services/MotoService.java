@@ -16,6 +16,7 @@ public class MotoService {
     @Autowired
     private MotoRepository motoRepository;
 
+
     int nbMax;
     Random rand ;
 
@@ -53,20 +54,13 @@ public class MotoService {
 
     public List<Moto> getIndexMoto(){
 
-        List<Moto> motos = new ArrayList<>();
-        List<Moto> allMotos = getAllMoto();
-        for (int i=0;i<nbMax;i++){
-            motos.add(allMotos.get(rand.nextInt(allMotos.size())));
-        }
+        List<Moto> motos = motoRepository.getMotoIndex();
         return motos;
     }
 
     public List<Moto> getMotoByMarqueId(Long id){
-        List<Moto>motos = motoRepository.findMotoByModelMarqueId(id);
-        List<Moto> motosSelectionee = new ArrayList<>();
-        for (int i=0 ; i<nbMax; i++)
-            motosSelectionee.add(motos.get(rand.nextInt(motos.size())));
-        return motosSelectionee;
+        List<Moto>motos = motoRepository.findMotoMarqueId(id);
+        return motos;
     }
 
     public List<Moto> getMotoByName(String nom){
