@@ -8,10 +8,11 @@ steps:
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
+    options: '-Dspring.profiles.active=dev'
     mavenOptions: '-Xmx3072m'
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.11'
     jdkArchitectureOption: 'x64'
-    publishJUnitResults: true
-    testResultsFiles: ''
+    publishJUnitResults: false
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
