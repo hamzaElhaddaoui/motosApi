@@ -48,6 +48,12 @@ public class MotoService {
         }
     }
 
+    public List<Moto> getMotosModel(Long id){
+        List<Moto> motos = new ArrayList<>();
+        motoRepository.findMotoByModelId(id).forEach(motos::add);
+        return motos;
+    }
+
     public void deleteMoto(Long id){
         motoRepository.deleteById(id);
     }

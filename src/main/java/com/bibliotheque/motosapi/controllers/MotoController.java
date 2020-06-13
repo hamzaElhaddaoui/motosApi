@@ -2,10 +2,15 @@ package com.bibliotheque.motosapi.controllers;
 
 import com.bibliotheque.motosapi.models.Moto;
 import com.bibliotheque.motosapi.services.MotoService;
+import org.hibernate.mapping.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Random;
+import java.util.stream.Collectors;
 
 @RestController
 public class MotoController {
@@ -16,6 +21,27 @@ public class MotoController {
     @GetMapping("/motos/index")
     public List<Moto> getIndexMoto(){
         return motoService.getIndexMoto();
+    }
+
+    @GetMapping("/motosModel/{id}")
+    public List<Moto> getMotosModel(@PathVariable Long id){
+//        Random rand = new Random();
+        List<Moto> mt = motoService.getMotosModel(id);
+        Collections.shuffle(mt);
+
+        List<Moto> motos = new ArrayList<>();
+
+        for(int i=0; i<3 && i<mt.size() ; i++){
+            motos.add(mt.get(i));
+        }
+//        List<Moto> motos = rand.ints(3,0,mt.size())
+//                            .mapToObj(i -> mt.get(i))
+//                            .distinct()
+//                            .collect(Collectors.toList());
+        if(motos.size()==1)
+            return null;
+        else
+            return motos;
     }
 
     @GetMapping("/motos/recherche/{nom}")

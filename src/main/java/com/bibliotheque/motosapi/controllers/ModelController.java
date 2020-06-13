@@ -1,6 +1,7 @@
 package com.bibliotheque.motosapi.controllers;
 
 import com.bibliotheque.motosapi.models.Model;
+import com.bibliotheque.motosapi.models.Moto;
 import com.bibliotheque.motosapi.services.ModelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

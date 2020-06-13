@@ -14,4 +14,6 @@ public interface MotoRepository extends CrudRepository<Moto, Long> {
     List<Moto> findMotoByNomContainsIgnoreCase(String nom);
     @Query(value = "select top 12 * from moto order by newid()",nativeQuery = true)
     List<Moto> getMotoIndex();
+
+    List<Moto> findMotoByModelId(Long id);
 }

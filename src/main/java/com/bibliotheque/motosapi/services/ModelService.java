@@ -1,6 +1,7 @@
 package com.bibliotheque.motosapi.services;
 
 import com.bibliotheque.motosapi.models.Model;
+import com.bibliotheque.motosapi.models.Moto;
 import com.bibliotheque.motosapi.repositories.ModelRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,7 @@ public class ModelService {
         modelRepository.findAll().forEach(models::add);
         return models;
     }
+
 
 //    public List<Model> getAllModelsByCategorie(Long id){
 //        return modelRepository.findByCategorieId(id);
