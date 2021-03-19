@@ -2,15 +2,15 @@ package com.bibliotheque.motosapi.controllers;
 
 import com.bibliotheque.motosapi.models.Moto;
 import com.bibliotheque.motosapi.services.MotoService;
-import org.hibernate.mapping.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
-import java.util.stream.Collectors;
 
 @RestController
 public class MotoController {
@@ -19,9 +19,7 @@ public class MotoController {
     private MotoService motoService;
 
     @GetMapping("/motos/index")
-    public List<Moto> getIndexMoto(){
-        return motoService.getIndexMoto();
-    }
+    public List<Moto> getIndexMoto(){ return motoService.getIndexMoto();}
 
     @GetMapping("/motosModel/{id}")
     public List<Moto> getMotosModel(@PathVariable Long id){

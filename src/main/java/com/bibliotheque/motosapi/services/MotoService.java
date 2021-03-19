@@ -2,7 +2,10 @@ package com.bibliotheque.motosapi.services;
 
 import com.bibliotheque.motosapi.models.Moto;
 import com.bibliotheque.motosapi.repositories.MotoRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -16,6 +19,8 @@ public class MotoService {
     @Autowired
     private MotoRepository motoRepository;
 
+    private static Logger LOG = LoggerFactory.getLogger(MotoService.class);
+
 
     int nbMax;
     Random rand ;
@@ -25,9 +30,10 @@ public class MotoService {
         rand= new Random();
     }
 
-    public List<Moto> getAllMoto(){
-        List<Moto> motos = new ArrayList<>();
-        motoRepository.findAll().forEach(motos::add);
+    public List<Moto> getAllMoto(Pageable pageable){
+        List<Moto> motos;
+        motos = motoRepository.findAll(pageable).getContent();
+        LOG.warn(""+motos.size());
         return motos;
     }
 
@@ -71,5 +77,11 @@ public class MotoService {
 
     public List<Moto> getMotoByName(String nom){
         return this.motoRepository.findMotoByNomContainsIgnoreCase(nom).stream().limit(120).collect(Collectors.toList());
+    }
+
+    public List<Moto> getAllMoto() {
+        List<Moto> motos = new ArrayList<>();
+        motoRepository.findAll().forEach(motos::add);
+        return motos;
     }
 }
