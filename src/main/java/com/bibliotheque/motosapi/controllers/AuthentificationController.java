@@ -4,6 +4,8 @@ import com.bibliotheque.motosapi.models.AuthentificationRequest;
 import com.bibliotheque.motosapi.models.AuthentificationResponse;
 import com.bibliotheque.motosapi.security.MyUserDetailsService;
 import com.bibliotheque.motosapi.util.JwtUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -26,9 +28,12 @@ public class AuthentificationController {
     @Autowired
     private JwtUtil jwtUtil;
 
-    @PostMapping("/authentification")
+    private static final Logger LOG = LoggerFactory.getLogger(AuthentificationController.class);
+
+    @PostMapping("/api/authentification")
     public ResponseEntity<?> creationAuthentification(@RequestBody AuthentificationRequest authentificationRequest) throws Exception{
-        System.out.println("en cours d'authentification");
+
+        LOG.warn("Authentification");
         // s'ethentifier en utilisant l'objet authentificationManager
         try{
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authentificationRequest.getUsername(),authentificationRequest.getPassword()));

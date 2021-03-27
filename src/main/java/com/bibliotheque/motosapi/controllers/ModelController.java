@@ -19,6 +19,11 @@ public class ModelController {
         return modelService.getAllModels();
     }
 
+    @GetMapping("/models/marque/{id}")
+    public List<Model> getModelsByMarque(@PathVariable Long id){
+        return this.modelService.getByMarqueModels(id);
+    }
+
 //    @GetMapping("/categories/{id}/models")
 //    public List<Model> getAllModelsByCategorie(@PathVariable Long id){
 //        return modelService.getAllModelsByCategorie(id);

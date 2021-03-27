@@ -21,6 +21,11 @@ public class ModelService {
         return models;
     }
 
+    public List<Model> getByMarqueModels(Long id){
+        List<Model> models = new ArrayList<>();
+        modelRepository.findByMarqueId(id).forEach(models::add);
+        return models;
+    }
 
 //    public List<Model> getAllModelsByCategorie(Long id){
 //        return modelRepository.findByCategorieId(id);

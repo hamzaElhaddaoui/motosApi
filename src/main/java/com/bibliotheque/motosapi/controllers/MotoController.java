@@ -62,7 +62,7 @@ public class MotoController {
         return motoService.getMotoById(id);
     }
 
-    @PostMapping("/motos")
+    @PostMapping("/api/motos")
     public void addMoto(@RequestBody Moto moto){
         motoService.addMoto(moto);
     }
